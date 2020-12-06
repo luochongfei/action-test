@@ -3,10 +3,13 @@ on: push
 
 jobs:
   job1:
-    name: "up"
+    name: "上传到七牛云任务"
     runs-on: ubuntu-latest
     steps:
-    - name: Uptoc Action
+    - name: 检索文件 # checkout
+      uses: actions/checkout@v2
+
+    - name: 执行上传
       uses: saltbo/uptoc@master
       with:
         driver: qiniu
