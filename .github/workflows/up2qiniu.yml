@@ -1,17 +1,18 @@
-name: up to qiniu
+name: 上传到七牛
 on: push
 
 jobs:
   job1:
     name: "up"
-    runs-on: Ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
     - name: Uptoc Action
-      uses: saltbo/uptoc@v1.4.3
+      uses: saltbo/uptoc@master
       with:
         driver: qiniu
         region: cn-south-1
         bucket: static
+        exclude: .cache,test
         dist: public
       env:
         UPTOC_UPLOADER_AK: ${{ secrets.AK }}
