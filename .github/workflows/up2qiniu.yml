@@ -1,0 +1,18 @@
+name: up to qiniu
+on: push
+
+jobs:
+  job1:
+    name: "up"
+    runs-on: Ubuntu-20.04
+    steps:
+    - name: Uptoc Action
+      uses: saltbo/uptoc@v1.4.3
+      with:
+        driver: qiniu
+        region: cn-south-1
+        bucket: static
+        dist: public
+      env:
+        UPTOC_UPLOADER_AK: ${{ secrets.AK }}
+        UPTOC_UPLOADER_SK: ${{ secrets.SK }}
