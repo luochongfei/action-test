@@ -1,4 +1,4 @@
-name: 上传到七牛
+name: 上传到七牛hujiulong
 on: push
 
 jobs:
@@ -10,13 +10,24 @@ jobs:
       uses: actions/checkout@v2
 
     - name: 执行上传
-      uses: saltbo/uptoc@master
+      uses: hujiulong/action-qiniu-upload@master
       with:
-        driver: qiniu
-        region: cn-south-1
+        access_key: ${{ secrets.AK }}
+
+        # Your qiniu secret key, required.
+        secret_key: ${{ secrets.SK }}
+
+        # Bucket name, required.
         bucket: static
-        exclude: .cache,test
-        dist: /home/runner/work/action-test/action-test/public/22.html
-      env:
-        UPTOC_UPLOADER_AK: ${{ secrets.AK }}
-        UPTOC_UPLOADER_SK: ${{ secrets.SK }}
+
+        # The local directory (or file) you want to upload to bucket.
+        # Default: './'
+        source_dir: 'public'
+
+        # The directory inside of the bucket you want to upload to, namely key prefix prepended to dest file key.
+        # Default: '/'
+        dest_dir: '/'
+
+        # Whether to ignore source maps.
+        # Default: true
+        ignore_source_map: true
