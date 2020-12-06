@@ -16,7 +16,7 @@ jobs:
         region: cn-south-1
         bucket: static
         exclude: .cache,test
-        dist: /home/runner/work/action-test/action-test/public/22.html
+        dist: public
       env:
         UPTOC_UPLOADER_AK: ${{ secrets.AK }}
         UPTOC_UPLOADER_SK: ${{ secrets.SK }}
