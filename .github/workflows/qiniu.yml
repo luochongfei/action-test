@@ -12,7 +12,8 @@ jobs:
     - name: 执行上传
       uses: luochongfei/up2qn@master
       with:
-        bucket: static
+        bucket: 'static'
         access_key: ${{ secrets.AK }}
         secret_key: ${{ secrets.SK }}
-        local_dir: web
+        local_dir: 'web'
+        local_exclude_dir: 'node_modules'
