@@ -10,17 +10,11 @@ jobs:
     - name: 检索文件 # checkout
       uses: actions/checkout@v2
 
-    - name: 先清空原有文件
-      run: rm -rf web/*
-
     - name: 执行上传
-      uses: saltbo/uptoc@master
+      uses: luochongfei/up2qn
       with:
-        driver: qiniu
-        region: cn-south-1
-        bucket: static
-        exclude: .cache,test
+        bucket: qiniu
+        access_key: ${{ secrets.AK }}
+        secret_key: ${{ secrets.SK }}
+        local_dir: web
         dist: web
-      env:
-        UPTOC_UPLOADER_AK: ${{ secrets.AK }}
-        UPTOC_UPLOADER_SK: ${{ secrets.SK }}
