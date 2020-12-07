@@ -13,7 +13,7 @@ jobs:
       uses: luochongfei/up2qn@master
       with:
         bucket: 'static'
-        access_key: ${{ secrets.AK }}
-        secret_key: ${{ secrets.SK }}
+        access_key: 'TmL4q74drl4FTezf5RhBnXaHFLkwMh98JvTl1ZCz'
+        secret_key: 'B_LuBetoZYecVqVhUXwObkYlfA0UvdtoUqEk-Spj'
         local_dir: 'web'
         local_exclude_dir: 'node_modules'
