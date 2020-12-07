@@ -8,11 +8,11 @@ jobs:
     steps:
     - name: 检索文件 # checkout
       uses: actions/checkout@v2
+
     - name: 执行上传
       uses: luochongfei/up2qn
       with:
-        bucket: qiniu
+        bucket: static
         access_key: ${{ secrets.AK }}
         secret_key: ${{ secrets.SK }}
         local_dir: web
-        dist: web
