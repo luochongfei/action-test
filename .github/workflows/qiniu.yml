@@ -13,7 +13,9 @@ jobs:
       uses: luochongfei/up2qn@master
       with:
         bucket: static
+        zone: 华南
         access_key: ${{ secrets.AK }}
         secret_key: ${{ secrets.SK }}
         local_dir: web
         local_exclude_dir: node_modules
+        target_dir: /
