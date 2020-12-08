@@ -17,5 +17,5 @@ jobs:
         access_key: ${{ secrets.AK }}
         secret_key: ${{ secrets.SK }}
         local_dir: web
-        local_exclude: '**/*.map,**/node_modules/**'
+        local_exclude: "**/*.map,**/node_modules/**"
         target_dir: /
