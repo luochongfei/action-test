@@ -1,3 +1,6 @@
 [submodule "Lcrs"]
 	path = Lcrs
 	url = https://github.com/luochongfei/Lcrs
+[submodule "upup"]
+	path = upup
+	url = git@github.com:luochongfei/upup.git
